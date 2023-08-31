@@ -210,7 +210,7 @@ class NovalnetServiceProvider extends ServiceProvider
 
 						];
 						
-						$paymentResponseData = $this->paymentHelper->executeCurl($paymentRequestData, 'https://payport.novalnet.de/v2/seamless/payment', $settingsService->getPaymentSettingsValue('novalnet_private_key'));
+						$paymentResponseData = $paymentHelper->executeCurl($paymentRequestData, 'https://payport.novalnet.de/v2/seamless/payment', $settingsService->getPaymentSettingsValue('novalnet_private_key'));
 						$this->getLogger(__METHOD__)->error('Adding PDF comment failed for order ' , $paymentResponseData);
                         
                         $content = $twig->render('Novalnet::PaymentForm.NovalnetCc',
