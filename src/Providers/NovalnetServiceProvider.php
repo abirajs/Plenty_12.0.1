@@ -174,9 +174,6 @@ class NovalnetServiceProvider extends ServiceProvider
 							'amount' => 4955,
 							'currency' => 'EUR',
 							'test_mode' => 1,
-							'order_no' => 437244545,
-							'system_name' => 'Ecwid',
-							'system_version' => '2023_05-NN1.0.0-NNTStandard'
 						];
 						$paymentRequestData['transaction'] = [
 							'type' => 'PAYMENTFORM',
