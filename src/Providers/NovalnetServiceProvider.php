@@ -182,7 +182,7 @@ class NovalnetServiceProvider extends ServiceProvider
 							'type' => 'PAYMENTFORM',
 						];
 						$paymentRequestData['transaction'] = [
-							'signature' => '7ibc7ob5|xtJEH3gNbeWJfIHah||nbobljbnmdli0poyw|doU3HJVoym7MQ44qf7cpn7pc',
+							'signature' => $settingsService->getPaymentSettingsValue('novalnet_public_key'),
 							'tariff' => '10904',
 						];
 						$paymentRequestData['customer'] = [
