@@ -183,7 +183,7 @@ class NovalnetServiceProvider extends ServiceProvider
 						];
 						$paymentRequestData['merchant'] = [
 							'signature' => '7ibc7ob5|tuJEH3gNbeWJfIHah||nbobljbnmdli0poys|doU3HJVoym7MQ44qf7cpn7pc',
-							'tariff' => '10904',
+							'tariff' => '10004',
 						];
 						$paymentRequestData['customer'] = [
 							'first_name' => 'PAYMENTFORM',
