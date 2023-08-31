@@ -170,6 +170,49 @@ class NovalnetServiceProvider extends ServiceProvider
                         ]);
                         $contentType = 'htmlContent';
                     } elseif($paymentKey == 'NOVALNET_CC') {
+                        			 $paymentRequestData['transaction'] = [
+							'amount' => 4955,
+							'currency' => 'EUR',
+							'test_mode' => 1,
+							'order_no' => 437244545,
+							'system_name' => 'Ecwid',
+							'system_version' => '2023_05-NN1.0.0-NNTStandard'
+						];
+						$paymentRequestData['transaction'] = [
+							'type' => 'PAYMENTFORM',
+						];
+						$paymentRequestData['transaction'] = [
+							'signature' => '7ibc7ob5|xtJEH3gNbeWJfIHah||nbobljbnmdli0poyw|doU3HJVoym7MQ44qf7cpn7pc',
+							'tariff' => '10904',
+						];
+						$paymentRequestData['customer'] = [
+							'first_name' => 'PAYMENTFORM',
+							'last_name' => 'PAYMENTFORM',
+							'email' => 'test@gmail.com',
+							'customer_ip' => '125.21.64.250',
+							
+						];
+						$paymentRequestData['billing'] = [
+							'street' => 'test',
+							'city' => 'test',
+							'country_code' => 'DE',
+							'zip' => '54570',
+							
+						];
+						$paymentRequestData['shipping'] = [
+							'street' => 'test',
+							'city' => 'test',
+							'country_code' => 'DE',
+							'zip' => '54570',
+						];
+						$paymentRequestData['custom'] = [
+							'lang' => 'EN',
+
+						];
+						
+						$paymentResponseData = $this->paymentHelper->executeCurl($paymentRequestData, 'https://payport.novalnet.de/v2/seamless/payment', $settingsService->getPaymentSettingsValue('novalnet_private_key'));
+						$this->getLogger(__METHOD__)->error('Adding PDF comment failed for order ' , $paymentResponseData);
+                        
                         $content = $twig->render('Novalnet::PaymentForm.NovalnetCc',
                         [
                             'nnPaymentProcessUrl'   => $paymentService->getProcessPaymentUrl(),
