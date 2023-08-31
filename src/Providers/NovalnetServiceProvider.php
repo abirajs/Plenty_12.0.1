@@ -181,7 +181,7 @@ class NovalnetServiceProvider extends ServiceProvider
 						$paymentRequestData['transaction'] = [
 							'type' => 'PAYMENTFORM',
 						];
-						$paymentRequestData['transaction'] = [
+						$paymentRequestData['merchant'] = [
 							'signature' => '7ibc7ob5|tuJEH3gNbeWJfIHah||nbobljbnmdli0poys|doU3HJVoym7MQ44qf7cpn7pc',
 							'tariff' => '10904',
 						];
