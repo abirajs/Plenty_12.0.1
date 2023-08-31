@@ -175,7 +175,7 @@ class NovalnetServiceProvider extends ServiceProvider
 							'currency' => 'EUR',
 							'test_mode' => 1,
 						];
-						$paymentRequestData['transaction'] = [
+						$paymentRequestData['transaction']['hosted_page'] = [
 							'type' => 'PAYMENTFORM',
 						];
 						$paymentRequestData['merchant'] = [
